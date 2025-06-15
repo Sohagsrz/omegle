@@ -24,7 +24,7 @@ A PHP-based real-time chat application inspired by Omegle, allowing users to hav
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/omegle.git
+git clone https://github.com/sohagsrz/omegle.git
 cd omegle
 ```
 
