@@ -1,0 +1,169 @@
+/* Typing indicator */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+    background: #f0f0f0;
+    border-radius: 15px;
+    width: fit-content;
+    max-width: 100px;
+}
+
+.typing-indicator .dot {
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+    background: #666;
+    border-radius: 50%;
+    animation: typingAnimation 1.4s infinite ease-in-out;
+}
+
+.typing-indicator .dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-indicator .dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator .dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typingAnimation {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-4px);
+    }
+}
+
+/* Dark mode styles */
+.dark {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark .bg-gray-800 {
+    background-color: #2d2d2d;
+}
+
+.dark .bg-gray-700 {
+    background-color: #3d3d3d;
+}
+
+.dark .bg-gray-600 {
+    background-color: #4d4d4d;
+}
+
+.dark .text-gray-400 {
+    color: #a0a0a0;
+}
+
+/* Video controls */
+.video-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.video-controls button {
+    transition: all 0.2s ease;
+    opacity: 1;
+}
+
+.video-controls button.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.video-controls button:hover {
+    transform: scale(1.05);
+}
+
+.video-controls button:active {
+    transform: scale(0.95);
+}
+
+/* Quality selector */
+#qualitySelector {
+    background-color: #4b5563;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #6b7280;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+#qualitySelector.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#qualitySelector:focus {
+    outline: none;
+    border-color: #9ca3af;
+}
+
+/* Call duration */
+#callDuration {
+    font-family: monospace;
+    font-size: 0.875rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+#callDuration.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Active states */
+.bg-red-600 {
+    background-color: #dc2626;
+}
+
+.bg-red-600:hover {
+    background-color: #b91c1c;
+}
+
+/* Button states */
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .video-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    #qualitySelector {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .video-controls button {
+        flex: 1;
+        min-width: 40px;
+    }
+}
+
+/* Theme transition */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+} 
